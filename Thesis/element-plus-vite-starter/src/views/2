@@ -1,0 +1,30 @@
+import { defineComponent, reactive } from 'vue';
+import { ElButton, ElDialog, ElForm, ElFormItem, ElInput } from 'element-plus';
+
+export default defineComponent({
+  components: {
+    ElButton,
+    ElDialog,
+    ElForm,
+    ElFormItem,
+    ElInput,
+  },
+  setup() {
+
+    const showDialog = () => {
+      state.dialogVisible = true;
+    };
+
+    const confirmInput = () => {
+      console.log(state.inputValue);
+      state.dialogVisible = false;
+    };
+
+    return {
+      ...state,
+      showDialog,
+      confirmInput,
+    };
+  },
+});
+</script>
