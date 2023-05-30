@@ -40,10 +40,10 @@
       <el-icon><setting /></el-icon>
       <template #title>规则设置</template>
     </el-menu-item>
-    <el-menu-item index="test">
-      <el-icon><setting /></el-icon>
-      <template #title>Test</template>
-    </el-menu-item>
+    <!-- <el-menu-item index="test"> -->
+    <!--   <el-icon><setting /></el-icon> -->
+    <!--   <template #title>Test</template> -->
+    <!-- </el-menu-item> -->
   </el-menu>
 </template>
 

@@ -45,6 +45,12 @@ const routes = [
     meta: { index: "user" },
   },
   {
+    path: "/fuzzy",
+    name: "fuzzy",
+    component: () => import("../views/Fuzzy.vue"),
+    meta: { index: "fuzzy" },
+  },
+  {
     path: "/test",
     name: "test",
     component: () => import("../views/Test.vue"),

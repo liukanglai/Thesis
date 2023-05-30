@@ -1,18 +1,21 @@
 <template>
   <div>
-    <el-table :data="tableData0" stripe style="width: 1500px">
-      <el-table-column prop="id" label="步骤ID" width="180" />
+    <el-table :data="tableData0" stripe style="width: 1700px">
+      <el-table-column prop="id" label="步骤ID" width="280" />
       <el-table-column prop="name" label="步骤名" width="280" />
       <el-table-column prop="info" label="操作描述" width="280" />
-      <el-table-column prop="usetime" label="所用时间" width="180" />
-      <el-table-column prop="distance" label="distance?" />
+      <el-table-column prop="status" label="操作状态" width="280" />
+      <el-table-column prop="usetime" label="时间(ms)" width="280" />
+      <el-table-column prop="distance" label="distance操作精准度" />
       <!-- <el-table-column prop="wrong" label="错误步数" /> -->
     </el-table>
+    <el-button type="warning" round @click="open">查看评分规则</el-button>
+    <!-- <el-button type="success" round @click="calculate">开始评分</el-button> -->
 
     <h3>详细信息</h3>
 
-    <el-table :data="tableData1" stripe style="width: 1500px">
-      <el-table-column prop="id" label="步骤ID" width="120" />
+    <el-table :data="tableData1" stripe style="width: 1700px">
+      <el-table-column prop="itemid" label="步骤ID" width="120" />
       <el-table-column prop="objectid" label="模具id" width="120" />
       <el-table-column prop="objectx" label="objectx" width="120" />
       <el-table-column prop="objecty" label="objecty" width="120" />
@@ -20,14 +23,13 @@
       <el-table-column prop="anglex" label="anglex" width="120" />
       <el-table-column prop="angley" label="angley" width="120" />
       <el-table-column prop="anglez" label="anglez" width="120" />
+      <el-table-column prop="intime" label="时间" width="120" />
       <el-table-column prop="speedx" label="speedx" width="120" />
       <el-table-column prop="speedy" label="speedy" width="120" />
       <el-table-column prop="speedz" label="speedz" />
       <!-- <el-table-column prop="wrong" label="错误步数" /> -->
     </el-table>
 
-    <el-button type="warning" round @click="open">查看评分规则</el-button>
-    <el-button type="success" round @click="calculate">开始评分</el-button>
     <!-- <el-button type="info" round>Info</el-button> -->
     <!-- <el-button type="warning" round>Warning</el-button> -->
     <!-- <el-button type="danger" round>Danger</el-button> -->
@@ -52,7 +54,6 @@ import { ref, onMounted, reactive, toRaw, shallowReactive, toRefs, inject } from
 
 const router = useRouter();
 const open = () => {
-  // ElMessage.success("Hello");
   router.push("/rule");
 };
 
@@ -65,6 +66,7 @@ const tableData0 = reactive([
     id: "1",
     name: "一：吊起管汇",
     info: "吊机左移",
+    status: "",
     usetime: "",
     distance: "",
   },
@@ -72,6 +74,7 @@ const tableData0 = reactive([
     id: "2",
     name: "一：吊起管汇",
     info: "钩住管汇",
+    status: "",
     usetime: "",
     distance: "",
   },
@@ -79,6 +82,7 @@ const tableData0 = reactive([
     id: "3",
     name: "一：吊起管汇",
     info: "吊起管汇",
+    status: "",
     usetime: "",
     distance: "",
   },
@@ -86,6 +90,7 @@ const tableData0 = reactive([
     id: "4",
     name: "二：下放管汇",
     info: "管汇入水",
+    status: "",
     usetime: "",
     distance: "",
   },
@@ -93,6 +98,7 @@ const tableData0 = reactive([
     id: "5",
     name: "二：下放管汇",
     info: "管汇下放海底",
+    status: "",
     usetime: "",
     distance: "",
   },
@@ -100,6 +106,7 @@ const tableData0 = reactive([
     id: "6",
     name: "三：ROV抓取管汇",
     info: "ROV高度调整",
+    status: "",
     usetime: "",
     distance: "",
   },
@@ -107,6 +114,7 @@ const tableData0 = reactive([
     id: "7",
     name: "三：ROV抓取管汇",
     info: "ROV抓取管汇",
+    status: "",
     usetime: "",
     distance: "",
   },
@@ -114,6 +122,7 @@ const tableData0 = reactive([
     id: "8",
     name: "四：ROV抓取管汇进行对中",
     info: "ROV抓取管汇进行水平对中",
+    status: "",
     usetime: "",
     distance: "",
   },
@@ -157,13 +166,13 @@ const calculate = () => {
     .then((response) => {
       // ElMessage(response.data);
       alert(response.data);
-      ElMessage("评分成功，请在成绩管理模块查看");
+      ElMessage("评分成功");
     })
     .catch((error) => {
       ElMessage.error("后台未连接！");
       console.log(error);
     });
-  // router.push("/score");
+  router.push("/score");
 };
 </script>
 <!-- "管汇安装准备", -->

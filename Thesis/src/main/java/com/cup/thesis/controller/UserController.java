@@ -21,5 +21,12 @@ public class UserController {
         //System.out.println(login.getPassword());
         return userService.getUser(userName);
     }
+    @RequestMapping(value = "/api/user/change/{userName}/{password}")
+    @CrossOrigin       //后端跨域
+    public String changePwd(@PathVariable String userName, @PathVariable String password) {
+        //System.out.println(login.getLoginName());
+        //System.out.println(login.getPassword());
+        return userService.chagePwd(userName, password);
+    }
 
 }

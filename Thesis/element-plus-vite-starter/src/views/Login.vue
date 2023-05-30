@@ -94,7 +94,7 @@ const form = reactive({
 <style>
 .login {
   text-align: center; /*让div内部文字居中*/
-  /* background-color: #fff; */
+  background-color: #fff;
   border-radius: 20px;
   width: 500px;
   height: 350px;
@@ -104,7 +104,7 @@ const form = reactive({
   left: 0;
   right: 0;
   bottom: 0;
-  background: url("../assets/lufei.jpg") no-repeat;
+  //background: url("../assets/lufei.jpg") no-repeat;
   background-position: center;
   height: 100%;
   width: 100%;

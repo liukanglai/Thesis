@@ -1,7 +1,31 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" class="element-plus-logo" src="../assets/logo.png" />
-    <h1>欢迎来到仿真评分系统！</h1>
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin-top: -50px;
+      "
+    >
+      <img alt="Vue logo" class="element-plus-logo" src="../assets/院徽+校名+院名-外蓝内白.png" />
+      <h1>欢迎来到仿真评分系统！</h1>
+    </div>
+    <!-- <img alt="Vue logo" class="element-plus-logo" src="../assets/院徽+校名+院名-外蓝内白.png" /> -->
+    <!-- <h1>欢迎来到仿真评分系统！</h1> -->
+    <!-- <h1 -->
+    <!--   style=" -->
+    <!--     text-align: center; -->
+    <!--     position: fixed; -->
+    <!--     top: 50%; -->
+    <!--     left: 50%; -->
+    <!--     transform: translate(-50%, -50%); -->
+    <!--   " -->
+    <!-- > -->
+    <!--   欢迎来到仿真评分系统！ -->
+    <!-- </h1> -->
   </div>
 </template>
 
@@ -26,7 +50,7 @@ export default {
       let user = localStorage.getItem("user");
       // console.log(user.value.name);
       // let user = this.$store.state.count;
-      myHeading.textContent = user + "欢迎来到仿真评分系统！";
+      myHeading.textContent = user + "，欢迎来到仿真评分系统！";
     },
   },
 };

@@ -1,22 +1,143 @@
 package com.cup.thesis;
 
+import com.alibaba.fastjson.JSON;
+import com.google.gson.Gson;
+import org.apache.commons.math3.linear.Array2DRowRealMatrix;
+import org.apache.commons.math3.linear.EigenDecomposition;
+
 import java.util.Arrays;
 
 public class AHP {
-    public static void main(String[] args) {
-        double[][] judgementMatrix = {
-                {1, 2, 5, 7, 1, 2, 6, 4},
-                {1 / 2.0, 1, 3, 5, 1 / 3.0, 1, 4, 2},
-                {1 / 5.0, 1 / 3.0, 1, 3, 1 / 5.0, 1 / 3.0, 2, 1},
-                {1 / 7.0, 1 / 5.0, 1 / 3.0, 1, 1 / 7.0, 1 / 5.0, 1 / 3.0, 1 / 2.0},
-                {1, 3, 5, 7, 1, 3, 6, 4},
-                {1 / 2.0, 1, 3, 5, 1 / 3.0, 1, 4, 2},
-                {1 / 6.0, 1 / 4.0, 1 / 2.0, 3, 1 / 6.0, 1 / 4.0, 1, 1 / 2.0},
-                {1 / 4.0, 1 / 2.0, 1, 2, 1 / 4.0, 1 / 2.0, 2, 1}
-        };
+    public static double[][] judgementMatrix1 = {
+            {1, 2, 5, 7, 1, 2, 6, 4},
+            {1 / 2.0, 1, 3, 5, 1 / 3.0, 1, 4, 2},
+            {1 / 5.0, 1 / 3.0, 1, 3, 1 / 5.0, 1 / 3.0, 2, 1},
+            {1 / 7.0, 1 / 5.0, 1 / 3.0, 1, 1 / 7.0, 1 / 5.0, 1 / 3.0, 1 / 2.0},
+            {1, 3, 5, 7, 1, 3, 6, 4},
+            {1 / 2.0, 1, 3, 5, 1 / 3.0, 1, 4, 2},
+            {1 / 6.0, 1 / 4.0, 1 / 2.0, 3, 1 / 6.0, 1 / 4.0, 1, 1 / 2.0},
+            {1 / 4.0, 1 / 2.0, 1, 2, 1 / 4.0, 1 / 2.0, 2, 1}
+    };
+    public static double[][] judgementMatrix2 = {
+            {1, 2, 1 / 2.0},
+            {1 / 2.0, 1, 1 / 4.0},
+            {2, 4, 1}
+    };
+    public static double[][] judgementMatrix3 = {
+            {1, 3, 5, 7, 1.0 / 3, 1.0 / 5, 1.0 / 7, 1.0 / 9, 1.0 / 3},
+            {1.0 / 3, 1, 3, 5, 1.0 / 7, 1.0 / 9, 1.0 / 3, 1.0 / 5, 1.0 / 7},
+            {1.0 / 5, 1.0 / 3, 1, 3, 1.0 / 5, 1.0 / 7, 1.0 / 9, 1.0 / 3, 1.0 / 5},
+            {1.0 / 7, 1.0 / 5, 1.0 / 3, 1, 1.0 / 3, 1.0 / 5, 1.0 / 7, 1.0 / 9, 1.0 / 3},
+            {3, 7, 5, 3, 1, 1.0 / 3, 1.0 / 5, 1.0 / 7, 1.0 / 5},
+            {5, 9, 7, 5, 3, 1, 1.0 / 3, 1.0 / 5, 1.0 / 3},
+            {7, 3, 9, 7, 5, 3, 1, 1.0 / 3, 1.0 / 5},
+            {9, 5, 3, 9, 7, 5, 3, 1, 1.0 / 3},
+            {1.0 / 3, 7, 5, 3, 5, 3, 1.0 / 5, 3, 1}
+    };
+    public static double[][] judgementMatrix4 = {
+            {1, 3, 2, 4},
+            {1.0 / 3, 1, 1.0 / 2, 2},
+            {1.0 / 2, 2, 1, 3},
+            {1.0 / 4, 1.0 / 2, 1.0 / 3, 1}
+    };
 
+    public static void main(String[] args) {
+        double[] weights = calculateWeights(judgementMatrix3);
+        System.out.println("权重: " + Arrays.toString(weights));
+        double CR = calculateCR(judgementMatrix1);
+        System.out.println(CR);
+        CR = calculateCR(judgementMatrix2);
+        System.out.println(CR);
+        CR = calculateCR(judgementMatrix3);
+        System.out.println(CR);
+        CR = calculateCR(judgementMatrix4);
+        System.out.println(CR);
+        if (CR > 0.1) {
+            System.out.println("判断矩阵不满足一致性要求");
+        }
+    }
+
+    /*
+    public static double calculateCR(double[][] judgementMatrix) {
+        Array2DRowRealMatrix m = new Array2DRowRealMatrix(judgementMatrix);
+        EigenDecomposition eig = new EigenDecomposition(m);
+        //double[] weights = eig.getEigenvector((int) eig.getRealEigenvalue()).toArray();
+
+        //System.out.println(Arrays.toString(weights));
+        double lambdaMax = eig.getRealEigenvalue(0);
+        int n = judgementMatrix.length;
+        double ci = (lambdaMax - n) / (n - 1);
+        if (ci == 0) {
+            return 0;
+        }
+        double ri = getRI(n);
+        double cr = ci / ri;
+
+        return cr;
+    }
+
+     */
+    public static double calculateCR(double[][] judgementMatrix) {
         double[] weights = calculateWeights(judgementMatrix);
-        //System.out.println("权重: " + Arrays.toString(weights));
+        int n = judgementMatrix.length;
+        double scores = 0;
+        for (int i = 0; i < n; i++) {
+            double sum = 0;
+            for (int j = 0; j < n; j++) {
+                 sum += judgementMatrix[i][j] * weights[j];
+            }
+            scores += sum/ weights[i];
+        }
+        double lambdaMax = scores / n;
+        double ci = (lambdaMax - n) / (n - 1);
+        if (ci == 0) {
+            return 0;
+        }
+        double ri = getRI(n);
+        double cr = ci / ri;
+
+        return cr;
+    }
+
+    public static double getRI(int n) {
+        double ri;
+        switch (n) {
+            case 1:
+                ri = 0.0;
+                break;
+            case 2:
+                ri = 0.0;
+                break;
+            case 3:
+                ri = 0.58;
+                break;
+            case 4:
+                ri = 0.9;
+                break;
+            case 5:
+                ri = 1.12;
+                break;
+            case 6:
+                ri = 1.24;
+                break;
+            case 7:
+                ri = 1.32;
+                break;
+            case 8:
+                ri = 1.41;
+                break;
+            case 9:
+                ri = 1.45;
+                break;
+            case 10:
+                ri = 1.49;
+                break;
+            // 可根据需要添加更多的维度对应的随机一致性指标值
+            default:
+                ri = 0.0;
+                break; // 如果维度超过10，这里暂时返回0.0
+        }
+        return ri;
     }
 
     /**

@@ -1,6 +1,9 @@
 package com.cup.thesis;
 
 import java.util.Arrays;
+import org.apache.commons.math3.linear.Array2DRowRealMatrix;
+import org.apache.commons.math3.linear.EigenDecomposition;
+
 
 public class AHP1 {
     public static void main(String[] args) {
@@ -16,7 +19,45 @@ public class AHP1 {
         };
 
         double[] weights = calculateWeights(judgementMatrix);
-        //System.out.println("权重: " + Arrays.toString(weights));
+        double CR = calculateCR(judgementMatrix);
+        if (CR > 0.1) {
+            System.out.println("判断矩阵不满足一致性要求");
+        }
+        System.out.println("权重: " + Arrays.toString(weights));
+        System.out.println(CR);
+    }
+
+    private static double calculateCR(double[][] judgementMatrix) {
+        Array2DRowRealMatrix m = new Array2DRowRealMatrix(judgementMatrix);
+        EigenDecomposition eig = new EigenDecomposition(m);
+        //double[] weights = eig.getEigenvector((int) eig.getRealEigenvalue()).toArray();
+
+        //System.out.println(Arrays.toString(weights));
+        double lambdaMax = eig.getRealEigenvalue(0);
+        int n = judgementMatrix.length;
+        double ci = (lambdaMax - n) / (n - 1);
+        double ri = getRI(n);
+        double cr = ci / ri;
+
+        return cr;
+    }
+    public static double getRI(int n) {
+        double ri;
+        switch (n) {
+            case 1: ri = 0.0; break;
+            case 2: ri = 0.0; break;
+            case 3: ri = 0.58; break;
+            case 4: ri = 0.9; break;
+            case 5: ri = 1.12; break;
+            case 6: ri = 1.24; break;
+            case 7: ri = 1.32; break;
+            case 8: ri = 1.41; break;
+            case 9: ri = 1.45; break;
+            case 10: ri = 1.49; break;
+            // 可根据需要添加更多的维度对应的随机一致性指标值
+            default: ri = 0.0; break; // 如果维度超过10，这里暂时返回0.0
+        }
+        return ri;
     }
 
     /**
@@ -48,13 +89,23 @@ public class AHP1 {
         }
         // 对每列进行加权平均，得到每个决策因素的权重
         double[] colSum = new double[n];
+        double sum1 = 0;
         for (int j = 0; j < n; j++) {
             double sum = 0;
             for (int i = 0; i < n; i++) {
                 sum += deviationMatrix[i][j];
             }
-            colSum[j] = sum / n;
+            colSum[j] = sum;
+            sum1 += colSum[j];
         }
+        System.out.println(Arrays.toString(colSum));
+        double sum2 = 0;
+        for (int i = 0; i < n; i++) {
+            weights[i] = colSum[i] / sum1;
+            sum2 += weights[i];
+        }
+        System.out.println(Arrays.toString(weights));
+        System.out.println(sum2);
 
         // 对每个决策因 素的偏离程度进行归一化，得到权重向量
         double deviationSum = 0;
