@@ -50,7 +50,7 @@ export default {
       let user = localStorage.getItem("user");
       // console.log(user.value.name);
       // let user = this.$store.state.count;
-      myHeading.textContent = user + "，欢迎来到仿真评分系统！";
+      myHeading.textContent = user + "，欢迎来到水下管汇仿真操作评分系统！";
     },
   },
 };

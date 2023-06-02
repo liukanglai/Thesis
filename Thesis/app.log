@@ -2423,3 +2423,66 @@ java.net.ConnectException: Connection refused
 2023-05-30T11:14:29.614+08:00  INFO 3703 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
 2023-05-30T11:16:08.971+08:00  INFO 3703 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2023-05-30T11:16:08.978+08:00  INFO 3703 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-30T19:34:37.601+08:00  INFO 3800 --- [restartedMain] com.cup.thesis.ThesisApplication         : Starting ThesisApplication using Java 20.0.1 with PID 3800 (/home/liukanglai/Thesis/target/classes started by liukanglai in /home/liukanglai/Thesis)
+2023-05-30T19:34:37.604+08:00  INFO 3800 --- [restartedMain] com.cup.thesis.ThesisApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-05-30T19:34:37.682+08:00  INFO 3800 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-30T19:34:37.682+08:00  INFO 3800 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-30T19:34:38.647+08:00  INFO 3800 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-30T19:34:38.654+08:00  INFO 3800 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-30T19:34:38.654+08:00  INFO 3800 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-05-30T19:34:38.685+08:00  INFO 3800 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-30T19:34:38.685+08:00  INFO 3800 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1003 ms
+2023-05-30T19:34:39.226+08:00  INFO 3800 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-05-30T19:34:39.572+08:00  INFO 3800 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-30T19:34:39.639+08:00  INFO 3800 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-30T19:34:39.652+08:00  INFO 3800 --- [restartedMain] com.cup.thesis.ThesisApplication         : Started ThesisApplication in 2.856 seconds (process running for 4.363)
+2023-05-30T19:34:40.513+08:00  INFO 3800 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-30T19:34:40.514+08:00  INFO 3800 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-30T19:34:40.520+08:00  INFO 3800 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2023-05-30T19:34:45.902+08:00  INFO 3800 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-30T19:34:46.040+08:00  INFO 3800 --- [http-nio-8080-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@54a27ac8
+2023-05-30T19:34:46.041+08:00  INFO 3800 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-30T19:36:00.919+08:00  INFO 3800 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-30T19:36:00.932+08:00  INFO 3800 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-30T19:39:33.638+08:00  INFO 3260 --- [restartedMain] com.cup.thesis.ThesisApplication         : Starting ThesisApplication using Java 20.0.1 with PID 3260 (/home/liukanglai/Thesis/target/classes started by liukanglai in /home/liukanglai/Thesis)
+2023-05-30T19:39:33.642+08:00  INFO 3260 --- [restartedMain] com.cup.thesis.ThesisApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-05-30T19:39:33.692+08:00  INFO 3260 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-30T19:39:33.692+08:00  INFO 3260 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-30T19:39:34.980+08:00  INFO 3260 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-30T19:39:34.987+08:00  INFO 3260 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-30T19:39:34.988+08:00  INFO 3260 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-05-30T19:39:35.026+08:00  INFO 3260 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-30T19:39:35.027+08:00  INFO 3260 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1333 ms
+2023-05-30T19:39:35.773+08:00  INFO 3260 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-05-30T19:39:36.007+08:00  INFO 3260 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-30T19:39:36.113+08:00  INFO 3260 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-30T19:39:36.125+08:00  INFO 3260 --- [restartedMain] com.cup.thesis.ThesisApplication         : Started ThesisApplication in 3.021 seconds (process running for 3.808)
+2023-05-30T19:39:36.307+08:00  INFO 3260 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-30T19:39:36.308+08:00  INFO 3260 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-30T19:39:36.310+08:00  INFO 3260 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-05-30T19:39:36.455+08:00  INFO 3260 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-30T19:39:36.611+08:00  INFO 3260 --- [http-nio-8080-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7ecd8ec8
+2023-05-30T19:39:36.613+08:00  INFO 3260 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-30T19:40:03.744+08:00  INFO 3260 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-30T19:40:03.751+08:00  INFO 3260 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-31T15:22:10.490+08:00  INFO 3126 --- [restartedMain] com.cup.thesis.ThesisApplication         : Starting ThesisApplication using Java 20.0.1 with PID 3126 (/home/liukanglai/Thesis/target/classes started by liukanglai in /home/liukanglai/Thesis)
+2023-05-31T15:22:10.492+08:00  INFO 3126 --- [restartedMain] com.cup.thesis.ThesisApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-05-31T15:22:10.530+08:00  INFO 3126 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-31T15:22:10.531+08:00  INFO 3126 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-31T15:22:11.199+08:00  INFO 3126 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-31T15:22:11.204+08:00  INFO 3126 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-31T15:22:11.204+08:00  INFO 3126 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-05-31T15:22:11.229+08:00  INFO 3126 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-31T15:22:11.229+08:00  INFO 3126 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 698 ms
+2023-05-31T15:22:11.757+08:00  INFO 3126 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-05-31T15:22:11.954+08:00  INFO 3126 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-31T15:22:12.166+08:00  INFO 3126 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-31T15:22:12.189+08:00  INFO 3126 --- [restartedMain] com.cup.thesis.ThesisApplication         : Started ThesisApplication in 2.205 seconds (process running for 2.849)
+2023-05-31T15:22:29.956+08:00  INFO 3126 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-31T15:22:29.956+08:00  INFO 3126 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-31T15:22:29.957+08:00  INFO 3126 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-31T15:22:30.064+08:00  INFO 3126 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-31T15:22:30.205+08:00  INFO 3126 --- [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1c775c5b
+2023-05-31T15:22:30.207+08:00  INFO 3126 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-31T15:30:52.516+08:00  INFO 3126 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-31T15:30:52.523+08:00  INFO 3126 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
